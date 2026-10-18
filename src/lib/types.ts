@@ -106,12 +106,45 @@ export interface CreateOrderResponse {
   order: OrderWithItems;
 }
 
+export interface RevenueDay {
+  /** کلید روز به‌صورت yyyy-mm-dd */
+  key: string;
+  /** برچسب فارسی روز هفته */
+  label: string;
+  revenue: number;
+  orders: number;
+}
+
+export interface TopProduct {
+  productName: string;
+  qty: number;
+}
+
+export interface LowStockProduct {
+  id: number;
+  name: string;
+  image: string;
+  stock: number;
+}
+
+export type OrderStatusCount = {
+  pending: number;
+  processing: number;
+  shipped: number;
+  delivered: number;
+  cancelled: number;
+};
+
 export interface AdminStatsResponse {
   revenue: number;
   ordersCount: number;
   productsCount: number;
   pendingCount: number;
   latestOrders: OrderWithItems[];
+  statusCounts: OrderStatusCount;
+  revenueByDay: RevenueDay[];
+  topProducts: TopProduct[];
+  lowStock: LowStockProduct[];
 }
 
 export interface AdminLoginResponse {

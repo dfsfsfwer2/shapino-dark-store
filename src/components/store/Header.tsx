@@ -105,12 +105,12 @@ export default function Header() {
           <div className="ms-auto flex items-center gap-1.5">
             <Button
               variant="ghost"
-              size="icon"
               onClick={openAdmin}
               aria-label="پنل مدیریت"
-              className="min-h-11 min-w-11 rounded-xl text-zinc-400 hover:bg-zinc-900 hover:text-amber-400"
+              className="min-h-11 gap-2 rounded-xl px-2.5 text-zinc-400 hover:bg-zinc-900 hover:text-amber-400 sm:px-3"
             >
               <ShieldCheck className="h-5 w-5" aria-hidden />
+              <span className="hidden text-sm font-medium md:inline">مدیریت</span>
             </Button>
 
             <Button

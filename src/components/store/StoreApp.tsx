@@ -2,6 +2,7 @@
 
 import Header from "./Header";
 import Hero from "./Hero";
+import FeaturedRow from "./FeaturedRow";
 import CategoryChips from "./CategoryChips";
 import ProductGrid from "./ProductGrid";
 import Footer from "./Footer";
@@ -22,6 +23,7 @@ export default function StoreApp() {
 
       <main className="relative flex-1">
         <Hero />
+        <FeaturedRow />
         <CategoryChips />
         <ProductGrid />
       </main>

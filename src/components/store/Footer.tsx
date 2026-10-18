@@ -1,7 +1,8 @@
 "use client";
 
-import { Mail, MapPin, Phone, ShoppingBag } from "lucide-react";
+import { Mail, MapPin, Phone, ShieldCheck, ShoppingBag } from "lucide-react";
 import { scrollToSection } from "./Header";
+import { useShopStore } from "@/store/useShopStore";
 
 const QUICK_LINKS = [
   { id: "home", label: "خانه" },
@@ -10,6 +11,8 @@ const QUICK_LINKS = [
 ];
 
 export default function Footer() {
+  const setAdminOpen = useShopStore((s) => s.setAdminOpen);
+
   return (
     <footer className="mt-auto border-t border-zinc-800/70 bg-zinc-900/50 pb-[env(safe-area-inset-bottom)]">
       <div className="mx-auto max-w-7xl px-4 py-10">
@@ -43,6 +46,16 @@ export default function Footer() {
                   </button>
                 </li>
               ))}
+              <li>
+                <button
+                  type="button"
+                  onClick={() => setAdminOpen(true)}
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-500 transition-colors hover:text-amber-400"
+                >
+                  <ShieldCheck className="h-3.5 w-3.5" aria-hidden />
+                  ورود مدیران
+                </button>
+              </li>
             </ul>
           </nav>
 
