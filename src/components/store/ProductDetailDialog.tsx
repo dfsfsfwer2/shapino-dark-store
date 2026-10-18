@@ -85,6 +85,10 @@ export default function ProductDetailDialog() {
       <DialogContent className="max-h-[90vh] max-w-3xl overflow-y-auto border-zinc-800 bg-zinc-900 p-0 text-zinc-100 sm:rounded-2xl">
         {loading || !product ? (
           <div className="flex min-h-64 items-center justify-center p-10">
+            <DialogHeader className="sr-only">
+              <DialogTitle>در حال بارگذاری محصول</DialogTitle>
+              <DialogDescription>لطفاً چند لحظه صبر کنید</DialogDescription>
+            </DialogHeader>
             <Loader2 className="h-8 w-8 animate-spin text-amber-400" aria-label="در حال بارگذاری" />
           </div>
         ) : (
